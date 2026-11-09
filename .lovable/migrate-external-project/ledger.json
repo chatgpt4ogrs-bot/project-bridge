@@ -1,0 +1,8 @@
+[
+ {"capability":"code","source":"6 Stitch HTML screens (Tailwind CDN + inline JS)","outcome":"rebuilt as React routes","status":"verified","next_action":"none"},
+ {"capability":"design system","source":"ncora_academy_design_system.md","outcome":"ported to src/styles.css tokens","status":"verified","next_action":"none"},
+ {"capability":"assets","source":"base64 images in HTML","outcome":"extracted, compressed, hosted as assets","status":"verified","next_action":"none"},
+ {"capability":"schema/records","source":"none (static mockups, hardcoded sample data)","outcome":"sample data module","status":"accepted","next_action":"optional: add Lovable Cloud for real courses/progress"},
+ {"capability":"auth/authorization","source":"none","outcome":"n/a","status":"accepted","next_action":"optional: add login + admin role"},
+ {"capability":"external providers, webhooks, schedules, secrets","source":"none detected","outcome":"n/a","status":"accepted","next_action":"none"}
+]

@@ -28,3 +28,6 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+- Âncora Academy is a front-end prototype: all course, student and certificate data lives in src/lib/academy-data.ts — why: the source was static Stitch mockups with no backend; replace with Lovable Cloud tables when real data is needed.
+- The sidebar/header shell (src/components/academy/AppShell.tsx) wraps every route from __root — why: all screens share the same LMS frame.
