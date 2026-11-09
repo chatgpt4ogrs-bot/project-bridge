@@ -3,6 +3,8 @@ import { useState, type ReactNode } from "react";
 import {
   Anchor, LayoutDashboard, Library, PlayCircle, BadgeCheck, ShieldCheck, Bell, Search, PanelLeftClose, PanelLeftOpen, Menu,
 } from "lucide-react";
+import logoRev from "@/assets/ancora-logo-rev.png.asset.json";
+import logoIcon from "@/assets/ancora-logo-icon.png.asset.json";
 import { student } from "@/lib/academy-data";
 import { cn } from "@/lib/utils";
 
@@ -42,16 +44,9 @@ export function AppShell({ children }: { children: ReactNode }) {
     const c = collapsed && !isMobile;
     return (
       <div className="flex h-full flex-col bg-sidebar text-sidebar-foreground">
-        <div className={cn("flex h-[68px] items-center gap-2 border-b border-sidebar-border px-4", c && "justify-center px-0")}>
-          <div className="flex size-9 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">
-            <Anchor className="size-5" />
-          </div>
-          {!c && (
-            <div className="leading-tight">
-              <div className="text-sm font-extrabold text-primary-foreground">Âncora</div>
-              <div className="label-caps text-sidebar-primary">Academy</div>
-            </div>
-          )}
+        <div className={cn("flex h-[84px] items-center gap-2 border-b border-sidebar-border px-4", c && "justify-center px-0")}>
+          <img src={logoRev.url} alt="Âncora Segurança Patrimonial" className={cn("object-contain", c ? "size-12" : "h-[68px] w-auto")} />
+          {!c && <div className="label-caps text-sidebar-primary">Academy</div>}
           {!isMobile && (
             <button onClick={() => setCollapsed(!collapsed)} className={cn("ml-auto rounded-md p-1.5 hover:bg-sidebar-accent", c && "hidden")} aria-label="Recolher menu">
               <PanelLeftClose className="size-4" />
@@ -163,8 +158,8 @@ export function CourseThumb({ image, title, className }: { image?: string | unde
   return image ? (
     <img src={image} alt={title} className={cn("w-full object-cover", className)} loading="lazy" />
   ) : (
-    <div className={cn("flex w-full items-center justify-center bg-primary text-sidebar-primary", className)}>
-      <Anchor className="size-10 opacity-80" />
+    <div className={cn("flex w-full items-center justify-center bg-muted", className)}>
+      <img src={logoIcon.url} alt="" className="h-3/4 max-h-28 object-contain" />
     </div>
   );
 }

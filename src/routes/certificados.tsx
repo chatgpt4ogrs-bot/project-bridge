@@ -1,9 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { toast } from "sonner";
-import { Anchor, BadgeCheck, Download, Eye } from "lucide-react";
+import { BadgeCheck, Download, Eye } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import logoMain from "@/assets/ancora-logo-main.png.asset.json";
+import logoRev from "@/assets/ancora-logo-rev.png.asset.json";
 import { certificates, student, type Certificate } from "@/lib/academy-data";
 
 export const Route = createFileRoute("/certificados")({
@@ -39,7 +41,7 @@ function Certificates() {
           <div key={c.id} className="card-surface overflow-hidden">
             <div className="relative bg-primary p-5 text-primary-foreground">
               <BadgeCheck className="absolute right-4 top-4 size-6 text-sidebar-primary" />
-              <div className="flex items-center gap-2"><Anchor className="size-4 text-sidebar-primary" /><span className="text-sm font-bold">Âncora Segurança</span></div>
+              <img src={logoRev.url} alt="Âncora Segurança" className="h-12 w-auto" />
               <div className="label-caps mt-4 text-sidebar-primary">Certificado oficial</div>
               <h3 className="mt-1 font-bold leading-snug">{c.title}</h3>
             </div>
@@ -61,8 +63,7 @@ function Certificates() {
           <DialogHeader><DialogTitle className="flex items-center gap-2"><BadgeCheck className="size-5" /> Visualização do certificado corporativo</DialogTitle></DialogHeader>
           {view && (
             <div className="rounded-[14px] border-4 border-double border-accent bg-background p-8 text-center">
-              <div className="mx-auto flex size-14 items-center justify-center rounded-full bg-primary text-sidebar-primary"><Anchor className="size-7" /></div>
-              <div className="mt-2 font-extrabold">Âncora Segurança</div>
+              <img src={logoMain.url} alt="Âncora Segurança Patrimonial" className="mx-auto h-28 w-auto mix-blend-multiply" />
               <div className="label-caps text-muted-foreground">Universidade Corporativa</div>
               <h2 className="mt-6 text-2xl font-extrabold md:text-[34px]">Certificado de Capacitação</h2>
               <p className="mx-auto mt-3 max-w-lg text-sm text-muted-foreground">Certificamos que o colaborador abaixo concluiu com aproveitamento satisfatório o treinamento corporativo operacional.</p>
